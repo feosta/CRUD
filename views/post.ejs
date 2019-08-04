@@ -12,8 +12,8 @@
     <b><%= datas.description %></b> <br>
     <%= datas.content %> <br>
     <ul>
-    <% datas.comments.forEach((comment)=>{ %>
-        <li> <%= comment %></li>
+    <% datas.comments.forEach((commentTxt)=>{ %>
+        <li> <%= commentTxt.text %></li>
         <% }) %>
 
     </ul>
