@@ -68,6 +68,10 @@ app.post('/add', (req, res) => {
     res.redirect('/');
 })
 
+app.get('/register',(req,res)=>{
+    res.render('register');
+});
+
 app.post('/register',(req,res)=>{
     var username = req.body.username;
     var password = req.body.password;
@@ -75,10 +79,10 @@ app.post('/register',(req,res)=>{
     User.register(userObject,password,(err,user)=>{
         if(err){
             console.log('error: '+err);
-            return res.render('register');
+            res.render('register');
             }
         passport.authenticate('local')(req,res,()=>{
-            res.redirect('/account');
+            res.redirect('account');
         });
     });
 });
