@@ -1,0 +1,19 @@
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title></title>
+    </head>
+    <body>
+            <form action="/:<%= datas._id %>?_method=PUT" method="POST">
+                <p>Title: <input type="text" name="titleTxt" value="<%= datas.title %>"></p>
+                <p>Picture: <input type="url" name="picUrl" value="<%= datas.image %>"></p>
+                <p>Description: <input type="text" name="descTxt" value="<%= datas.description %>"></p>
+                <p>Content: <input type="text" maxlength="255" name="contentTxt" value="<%= datas.content %>"></p>
+                <input type="hidden" value="<%= datas._id %>" name="postID">
+               <button>Submit</button>
+            </form>
+            <a href="/"><button>Cancel</button></a>
+
+    </body>
+    </html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+</head>
+<body>
+        <%=datas.title %><br>
+    <img src="<%= datas.image %>"><br>
+    <b><%= datas.description %></b> <br>
+    <%= datas.content %> <br>
+    <ul>
+    <% datas.comments.forEach((comment)=>{ %>
+        <li> <%= comment %></li>
+        <% }) %>
+
+    </ul>
+    <a href="<%=datas._id%>/edit"><button>EDIT</button></a>
+    
+    <form action="<%= datas._id %>?_method=DELETE" method="post">
+            <input type="submit" value="Delete" name="delete">
+        </form>
+        <form action="<%= datas.id %>" method="post">
+                <p><textarea name="comment"></textarea></p>
+                <input type="submit" value="Post comment">
+            </form>
+
+    <a href="/"><button>Back</button></a>
+
+</body>
+</html>
